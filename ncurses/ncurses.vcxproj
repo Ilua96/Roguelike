@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{104C9457-B4B2-4F2F-B67E-4399BC6B2263}</ProjectGuid>
-    <RootNamespace>Roguelike</RootNamespace>
+    <ProjectGuid>{8E100BD6-58AD-4DA6-8F90-3E32B8F78D1B}</ProjectGuid>
+    <RootNamespace>ncurses</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -74,8 +74,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Илья\Documents\Visual Studio 2015\Projects\Roguelike\Roguelike;$(ProjectDir)include</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(ProjectDir)lib\pdcurses.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -111,22 +114,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Characters.h" />
-    <ClInclude Include="Config.h" />
-    <ClInclude Include="Controller.h" />
-    <ClInclude Include="Editor.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="Point.h" />
-    <ClInclude Include="Respawns.h" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Characters.cpp" />
-    <ClCompile Include="Config.cpp" />
-    <ClCompile Include="Controller.cpp" />
-    <ClCompile Include="Editor.cpp" />
-    <ClCompile Include="Map.cpp" />
-    <ClCompile Include="PointFunction.cpp" />
-    <ClCompile Include="Respawns.cpp" />
+    <ProjectReference Include="..\Roguelike\Roguelike.vcxproj">
+      <Project>{104c9457-b4b2-4f2f-b67e-4399bc6b2263}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map.txt" />
+    <Text Include="config.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

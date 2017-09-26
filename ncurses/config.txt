@@ -1,0 +1,14 @@
+2
+Characters 6
+Knight 50 100
+Princess 0 1
+Dragon 25 150
+Zombie 10 100
+Wizard 0 50
+Fireball 25 1
+Respawns 4
+Respawn_Health 5
+Respawn_Zombie 3
+Respawn_Dragon 5
+Respawn_Wizard 5
+endf
